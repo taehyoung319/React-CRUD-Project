@@ -1,0 +1,377 @@
+/* fonts */
+@font-face { src: url("../fonts/NotoSans-Regular.ttf"); font-family: 'NotoSans-Regular'; }
+@font-face { src: url("../fonts/NotoSans-Bold.ttf"); font-family: 'NotoSans-Bold'; }
+@font-face { src: url("../fonts/NotoSans-Medium.ttf"); font-family: 'NotoSans-Medium'; }
+@font-face { src: url("../fonts/NotoSansKR-Thin.otf"); font-family: 'NotoSansKR-Thin'; }
+@font-face { src: url("../fonts/NotoSansKR-Regular.otf"); font-family: 'NotoSansKR-Regular'; }
+@font-face { src: url("../fonts/NotoSansKR-Bold.otf"); font-family: 'NotoSansKR-Bold'; }
+@font-face { src: url("../fonts/NotoSansKR-Medium.otf"); font-family: 'NotoSansKR-Medium'; }
+
+/* setting */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    letter-spacing: -0.03em;
+    font-family: 'NotoSans-Regular', 'NotoSansKR-Regular';
+}
+
+ul, li, ol { list-style: none; }
+a { color: inherit; text-decoration: none; }
+a:hover { color: inherit; text-decoration: none; }
+button { border: none; background: none; }
+
+html, body { overflow-x: hidden; }
+.vw-50 { width: 20vw; }
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.container, .header-container, .main-container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+  
+@media (min-width: 576px) {
+    .container { max-width: 540px; }
+    .main-container { max-width: 540px; }
+    .header-container { max-width: 540px; }
+}
+  
+@media (min-width: 768px) {
+    .container { max-width: 720px; }
+    .main-container { max-width: 720px; }
+    .header-container { max-width: 720px; }
+}
+  
+@media (min-width: 992px) {
+    .container { max-width: 960px; }
+    .main-container { max-width: 960px; }
+    .header-container { max-width: 960px; }
+}
+  
+@media (min-width: 1200px) {
+    .container { max-width: 1440px; }
+    .main-container { max-width: 1600px; }
+    .header-container { max-width: 1900px; }
+}
+
+::selection {
+    background: #FFE000;
+    color: #000;
+}
+
+.layout {
+    padding-top: 150px;
+}
+
+.stateTable thead{
+    text-align: center;
+    font-weight: bold;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+
+.stateTable tbody tr td {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 15px;
+}
+
+/*@keyframes header {*/
+/*    from { transform: translateY(-70px) translate(-50%) }*/
+/*    to { transform: translateY(0px) translate(-50%) }*/
+/*}*/
+
+#visual {
+    background: #1f1f1f;
+}
+
+header { height: 80px; position: fixed; z-index: 101; }
+
+header .header {
+    height: 80px;
+    position: absolute;
+    left: 50%; top: 0;
+    transform: translateX(-50%);
+    user-select: none;
+    z-index: 100;
+    transition: .4s;
+}
+
+header .menu-bar {
+    width: 160px;
+}
+
+.icon-hover-e {
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    transition: .2s;
+}
+
+.icon-hover-e:hover {
+    background: #eee;
+}
+
+.bar > path {
+    stroke-width: 3;
+}
+
+header .navs {
+    position: fixed;
+    animation-delay: 10s;
+    right: -15%;
+    top: 0;
+    background: #FFE000;
+    opacity: .7;
+    transition: .6s;
+}
+
+header .navs ul {
+    transition: .6s;
+    opacity: 0;
+}
+
+header .navs ul:nth-child(1) {
+    margin-top: 150px;
+}
+
+header .navs ul li {
+    opacity: 1;
+    font-weight: bold;
+    font-size: 25px;
+    color: #000;
+    letter-spacing: -1px;
+    margin-right: 30px;
+}
+
+header .navs[data-view="view"] {
+    right: 0;
+    opacity: 1;
+    z-index: 99;
+}
+
+header .navs[data-view="view"] ul {
+    opacity: 1;
+}
+
+
+header .bar[data-view="view"] {
+    color: #000;
+}
+
+header .navs ul li {
+    position: relative;
+}
+
+header .hover-span {
+    margin-top: 2.5px;
+    position: absolute;
+    right: 0;
+    display: block;
+    height: 2px;
+    width: 0;
+    background: #000;
+    transition: .3s;
+}
+
+header ul li a {
+    transition: .3s;
+}
+
+header ul li a:hover ~ .hover-span {
+    width: 105%;
+}
+
+/*#visual {*/
+/*    background: #1a6dff;*/
+/*}*/
+
+#login form,
+#join form {
+    width: 370px;
+}
+
+#login form p a,
+#join form p a {
+    color: #3d3df1;
+    text-decoration-line: underline;
+}
+
+#visual .contents h1 {
+    font-size: 46px;
+    font-weight: bold;
+    letter-spacing: -4px;
+}
+
+@keyframes text1 { 0% { margin-left: 200px; } 100% { margin-left: 0; opacity: 1; } }
+@keyframes text2 { 0% { margin-right: 200px; } 100% { margin-right: 0; opacity: 1; } }
+@keyframes text3 { 0% { margin-left: -50px; } 100% { margin-left: 240px; opacity: 1; } }
+@keyframes moveBtn { 0% { margin-left: -50px; } 100% { margin-left: 0; opacity: 1; } }
+
+#visual .contents { color: #fff; }
+#visual .contents .text { color: #fff; letter-spacing: -10px; font-size: 140px; line-height: 180px; }
+#visual .contents > div { opacity: 0; }
+#visual .contents .visual-text1 { animation: text1 1.5s forwards; }
+#visual .contents .visual-text2 { animation: text2 1.5s forwards; animation-delay: .3s; }
+#visual .contents .visual-text3 { animation: text3 1.5s forwards; animation-delay: .6s; }
+#visual .contents .text2 { font-family: "NotoSansKR-Thin"; }
+#visual .contents button { color: #fff; }
+#visual .contents .button-box { animation: moveBtn 1s forwards; animation-delay: 1.2s; color: #fff; }
+#visual .contents .button-box button { border: 2px solid #fff; position: relative; width: 166px; height: 46px; transition: .3s; border-radius: 4px; }
+#visual .contents button:hover { color: #FFE000; }
+#visual .contents .button-box button:hover { color: #fff; transform: translateY(-5px); border: 4px solid #FFE000; }
+
+/* 포럼리스트 */
+#formList {
+    padding-top: 100px;
+}
+
+#formList .list .list-main {
+    width: calc(100% / 2 - 15px);
+    transition: .5s;
+    height: 650px;
+}
+
+#formList .list .list-box-text {
+    padding: 25px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 4px 12px 30px 6px rgb(0 0 0 / 9%);
+    transition: .3s;
+}
+
+#formList .list .list-box-text:hover {
+    transform: translateY(-5px);
+}
+
+#formList .list .list-main .list-box-text h3 {
+    font-weight: bold;
+    letter-spacing: -2px;
+    font-size: 32px;
+    line-height: 46px;
+}
+
+#formList .footer-text {
+    color: #333;
+}
+
+#formList .list-slide {
+    width: calc(100% / 2 - 15px);
+}
+
+#formList .list-slide .list-box-text {
+    background: #fff;
+    width: 330px;
+    height: 200px;
+}
+
+#formList .forum-title {
+    font-size: 23px;
+    font-weight: bold ;
+}
+
+.forumTable thead{
+    text-align: center;
+    font-weight: bold;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+
+.forumTable tbody tr td {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 15px;
+}
+
+.forumTable tbody tr:last-child {
+    border-bottom: 1px solid #000;
+}
+
+#forumView .user {
+    border-bottom: 2px solid grey;
+    color: grey;
+
+}
+
+#forumView .user > p {
+    margin: 0;
+}
+
+#forumView .profile:hover {
+    background: #000;
+    color: #fff;
+}
+
+#forumView .profile {
+    font-size: 12px;
+    color: #000;
+    padding: 0 20px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    transition: .3s;
+}
+
+#forumView .infor {
+    margin-bottom: 250px;
+}
+
+#forumView .infor > p {
+    margin: 0;
+    font-size: 14px;
+}
+
+#forumView .comment .totalCmt {
+    font-size: 14px;
+}
+
+#forumView .comment .commentBox {
+    border-top: 2px solid #000;
+}
+
+#forumView .comment textarea {
+    transition: .3s;
+    resize: none;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #000;
+    font-size: 13px;
+    height: 100px;
+    padding: 13px;
+    width: 90%;
+}
+
+#forumView .comment textarea:focus {
+    border-bottom: 2px solid #ffd40b;
+}
+
+#forumView .commentAdd button {
+    width: 10%;
+    height: 100px;
+    resize: none;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #000;
+}
+
+#forumView .comment .commentContents {
+    padding: 12px;
+    font-size: 14px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+#forumView .comment .user_name {
+    font-size: 13px;
+    color: #999;
+    margin-right: 100px;
+}
+
+#forumView .comment .create_dt {
+    font-size: 12px;
+    color: #999;
+}
